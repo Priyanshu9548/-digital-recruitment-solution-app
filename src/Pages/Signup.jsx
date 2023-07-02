@@ -15,7 +15,7 @@ const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
     if (isLoggedIn) {
       navigate("/"); // Navigate to the login page if not logged in
     }
-  }, []);
+  },);
 
   if (isLoggedIn) {
     return null; // Render nothing if not logged in

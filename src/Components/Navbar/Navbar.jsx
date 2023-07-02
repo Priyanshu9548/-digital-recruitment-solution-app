@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Link
                   to="home"
                   activeClass="text-active"
-                  className={`cursor-pointer ${
+                  className={`px-2 lg:px-0  h-6 w-fit  animate-text flex items-center justify-center text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500 cursor-pointer ${
                     scroll ? "text-active" : "text-inactive"
                   }`}
                   smooth
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Link
                   to="about"
                   activeClass="text-active"
-                  className={`cursor-pointer ${
+                  className={`px-2 lg:px-0  h-6 w-fit  animate-text flex items-center justify-center text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500 cursor-pointer ${
                     scroll ? "text-active" : "text-inactive"
                   }`}
                   smooth
@@ -84,7 +84,7 @@ const Navbar = () => {
               <li>
                 <Link1
                   to="jobs"
-                  className={`cursor-pointer ${
+                  className={`px-2 lg:px-0  h-6 w-fit  animate-text flex items-center justify-center text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500 cursor-pointer ${
                     location.pathname === "/jobs"
                       ? "text-active"
                       : "text-inactive"
@@ -94,9 +94,9 @@ const Navbar = () => {
                   JOB OPENINGS
                 </Link1>
               </li>
-              <li>
+              <li className="px-2 lg:px-0  h-6 w-fit  animate-text flex items-center justify-center text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500">
                 {isLoggedIn ? (
-                  <button onClick={userlogout}>Logout</button>
+                  <button onClick={userlogout}> Logout</button>
                 ) : (
                   <Link1
                     to="/signup"

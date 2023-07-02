@@ -16,7 +16,7 @@ const Login = () => {
     if (isLoggedIn) {
       navigate("/"); // Navigate to the home page if already logged in
     }
-  }, []);
+  },);
 
   if (isLoggedIn) {
     return null; // Render nothing if already logged in
@@ -54,7 +54,7 @@ const Login = () => {
       }}
     >
       <div className="bg-white  px-16 py-16 rounded-3xl ">
-        <h2 className="text-black text-4xl mb-8 font-semibold">Log in</h2>
+        <h2 className="text-black text-4xl mb-8 font-semibold ">Log in</h2>
 
         <form onSubmit={handleLogin}>
           <div className="flex flex-col gap-2">

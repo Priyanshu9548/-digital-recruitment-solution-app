@@ -1,18 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useLocation, Link as Link1 } from "react-router-dom";
 import { Link } from "react-scroll";
+import { useDispatch } from "react-redux";
+import { logout } from "../../Store/auth";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
   const handleScroll = () => {
     if (window.scrollY >= 80) {
       setScroll(true);
     } else {
       setScroll(false);
     }
+  };
+  let navigate = useNavigate();
+  const userlogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+  const mobilelogout = () => {
+    setMobileMenuOpen(false)
+    dispatch(logout());
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -29,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full transition-colors duration-300 ${navbarClasses}`}
+      className={`fixed  w-full transition-colors duration-300 ${navbarClasses}`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -67,34 +82,36 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
+                <Link1
                   to="jobs"
-                  activeClass="text-active"
                   className={`cursor-pointer ${
                     location.pathname === "/jobs"
                       ? "text-active"
                       : "text-inactive"
                   }`}
-                  smooth
-                  spy
+                 
                 >
                   JOB OPENINGS
-                </Link>
+                </Link1>
               </li>
               <li>
-                <Link
-                  to="contact"
-                  activeClass="text-active"
-                  className={`cursor-pointer ${
-                    location.pathname === "/contact"
-                      ? "text-active"
-                      : "text-inactive"
-                  }`}
-                  smooth
-                  spy
-                >
-                  CONTACT
-                </Link>
+                {isLoggedIn ? (
+                  <button onClick={userlogout}>Logout</button>
+                ) : (
+                  <Link1
+                    to="/signup"
+                    className={`cursor-pointer ${
+                     location.pathname === "/signup" || "/login"
+                        ? "text-green-600"
+                        : "text-inactive"
+                    }`}
+                  > 
+                 {
+                  location.pathname === "/signup"? "LOG IN":location.pathname === "/login"? "REGISTER":null
+                 }
+                    
+                  </Link1>
+                )}
               </li>
             </ul>
           </div>
@@ -175,20 +192,24 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="contact"
-                activeClass="text-active"
-                className={`text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === "/contact"
-                    ? "text-active"
-                    : "text-inactive"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-                smooth
-                spy
-              >
-                Contact
-              </Link>
+            {isLoggedIn ? (
+                  <button onClick={mobilelogout}>Logout</button>
+                ) : (
+                  <Link1
+                    to="/signup"
+                    className={`cursor-pointer ${
+                     location.pathname === "/signup" || "/login"
+                        ? "text-green-600"
+                        : "text-inactive"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  > 
+                 {
+                  location.pathname === "/signup"? "LOG IN":location.pathname === "/login"? "REGISTER":null
+                 }
+                    
+                  </Link1>
+                )}
             </li>
           </ul>
         </div>

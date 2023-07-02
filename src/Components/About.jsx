@@ -1,17 +1,17 @@
 import React from "react";
 import about from "../Assets/images/about.png";
 import "./button.css";
+
 function About({ image, title, button }) {
   return (
-    <div className="w-4/5 pl-32 " id="about">
-      <div className=" flex items-center">
-        <div className="about__image flex-shrink-0">
-          <img src={about} alt="group" />
+    <div className=" md:w-5/5 sm:w-[4/5] mx-auto pl-4 md:pl-0" id="about">
+      <div className="flex flex-col md:flex-row items-center">
+        <div className=" flex-shrink-0 mb-4 md:mb-0 md:mr-8">
+          <img src={about} alt="group" className="w-full h-auto" />
         </div>
-        <div className=" ml-20">
-          <h2 className="text-[#B480AA] text-2xl"> About XYZ... </h2>
-          <br />
-          <p className="text-justify">
+        <div className="ml-0 md:ml-8">
+          <h2 className="text-[#B480AA] text-2xl mb-2 md:mb-4 "> About XYZ... </h2>
+          <p className="text-justify mr-4">
             Laura Ipsum is a variant of the well-known Lorem Ipsum placeholder
             text. It was created as a tribute to Laura Gonzalez, a talented
             designer and developer who made significant contributions to the
@@ -20,10 +20,9 @@ function About({ image, title, button }) {
             placeholder in website prototypes, graphic design projects, and
             other creative endeavors. 💟
           </p>
-          {/* <button href='/#' className='bg-black rounded-md mt-4 px-3 py-3'>Contact Us</button> */}
-          <div className="container1">
+          <div className="container1 mt-4">
             <div className="btn15">
-              <a href="/#" target={"_blank"} rel="noopener noreferrer">
+              <a href="/#" target="_blank" rel="noopener noreferrer">
                 Contact Us
               </a>
             </div>

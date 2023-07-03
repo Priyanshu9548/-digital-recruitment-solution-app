@@ -53,7 +53,7 @@ const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
       backgroundImage: `url(${bg1})`,
     }}
   >
-    <div className="bg-white  px-16 py-16 rounded-3xl ">
+    <div className="bg-white  md:px-16 md:py-16 px-10 py-10  rounded-3xl ">
       <h2 className="text-black text-4xl mb-8 font-semibold">Sign up</h2>
       <form onSubmit={handleSignup}>
         <div className="flex flex-col gap-2">

@@ -184,11 +184,11 @@ const Navbar = () => {
                     : "text-inactive"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
-                smooth
-                spy
+              
               >
                 Job Openings
               </Link>
+              
             </li>
             <li>
             {isLoggedIn ? (

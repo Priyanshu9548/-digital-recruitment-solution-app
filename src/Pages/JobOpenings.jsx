@@ -33,7 +33,7 @@ const JobOpenings = () => {
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow bg-gray-100 w-screen pl-32 ">
         <div className="flex w-full my-6">
-          <div className="mt-6 font-medium text-2xl hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500">
+          <div className="mt-6 font-medium md:text-2xl text-xl hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500">
             <a href="/jobs">Job Openings</a>
           </div>
           <div className="ml-auto mt-6 mr-24">

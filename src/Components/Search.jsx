@@ -3,7 +3,7 @@ import SearchBox from "./Searchbox";
 
 const Search = ({ onSearchChange }) => {
   return (
-    <div className="search-area flex flex-wrap items-center ml4 mt1 z-1">
+    <div className="search-area flex flex-wrap items-center ml-4 mt-1 z-1">
       <SearchBox  searchChange={onSearchChange} />
     </div>
   );

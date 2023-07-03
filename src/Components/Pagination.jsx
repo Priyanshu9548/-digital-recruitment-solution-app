@@ -9,7 +9,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, paginate }) => {
   
     return (
         <div className="">
-      <ul className=" flex justify-center gap-10 ">
+      <ul className=" flex justify-center gap-10 mb-10 text-xl mt-3 ">
         {Array.from({ length: pageNumbers }, (_, index) => (
           <li
             key={index}

@@ -5,6 +5,7 @@ import persons from "../Assets/person.json";
 import Pagination from "../Components/Pagination";
 import Card from "../Components/Card";
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar/Navbar";
 
 const JobOpenings = () => {
   const people = persons;
@@ -30,13 +31,18 @@ const JobOpenings = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+
+<div className="navbar-wrapper fixed z-50 w-full">
+        <Navbar />
+      </div>
+    <div className="flex flex-col min-h-screen  ">
       <div className="flex-grow bg-gray-100 w-screen pl-32 ">
         <div className="flex w-full my-6">
           <div className="mt-6 font-medium md:text-2xl text-xl hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500">
             <a href="/jobs">Job Openings</a>
           </div>
-          <div className="ml-auto mt-6 mr-24">
+          <div className="ml-auto mt-6 mr-32">
             <Search onSearchChange={(e) => setSearchTerm(e.target.value)} />
           </div>
         </div>
@@ -57,7 +63,7 @@ const JobOpenings = () => {
       <div className="mt-auto w-screen">
         <Footer />
       </div>
-    </div>
+    </div></>
   );
 };
 

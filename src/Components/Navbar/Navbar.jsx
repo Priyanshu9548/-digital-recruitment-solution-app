@@ -117,10 +117,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu */}
-          <div className="md:hidden">
+          <div className="md:hidden text-black">
             <button
               type="button"
-              className="text-gray-800 hover:text-white focus:outline-none focus:text-white"
+              className="text-black hover:text-black focus:text-black"
               onClick={toggleMobileMenu}
             >
               <svg
@@ -147,7 +147,7 @@ const Navbar = () => {
               <Link
                 to="home"
                 activeClass="text-active"
-                className={`text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
+                className={`text-gray-800 hover:bg-gray-700 cursor-pointer hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === "/home"
                     ? "text-active"
                     : "text-inactive"
@@ -163,7 +163,7 @@ const Navbar = () => {
               <Link
                 to="about"
                 activeClass="text-active"
-                className={`text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
+                className={`text-gray-800 hover:bg-gray-700 cursor-pointer hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === "/about"
                     ? "text-active"
                     : "text-inactive"
@@ -178,8 +178,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="jobs"
-                activeClass="text-active"
-                className={`text-gray-800 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
+                className={`text-gray-800 hover:bg-gray-700  hover:text-white font-medium block px-3 py-2 cursor-pointer rounded-md text-base font-medium" ${
                   location.pathname === "/jobs"
                     ? "text-active"
                     : "text-inactive"
@@ -193,7 +192,7 @@ const Navbar = () => {
             </li>
             <li>
             {isLoggedIn ? (
-                  <button onClick={mobilelogout}>Logout</button>
+                  <button className="ml-3 font-medium" onClick={mobilelogout}>Logout</button>
                 ) : (
                   <Link1
                     to="/signup"

@@ -21,8 +21,8 @@ const Card = ({ user }) => {
   id={`person-${user.id}`}
   className="card bg-gray-100 rounded-sm shadow-lg shadow-outline hover:shadow-xl hover:scale-105"
 >
-  <div className="relative pt-3 rounded-md rounded-t-lg w-[243px] h-[350px]">
-  <div className="bg-violet-400 h-[290px] flex flex-col items-center justify-center w-full rounded-md">
+  <div className="relative pt-3 rounded-lg  w-[243px] h-[350px]">
+  <div className="bg-violet-300 hover:bg-violet-400 h-[290px] flex flex-col items-center justify-center w-full rounded-t-lg">
   <img
     className="rounded-full bg-center object-cover w-3/4"
     src={img || defaultImageDataURI}
@@ -30,12 +30,12 @@ const Card = ({ user }) => {
     loading="lazy"
     onError={(e) => addDefaultImg(e)}
   />
-  <h2 className="name mt-3 mb-1 px-3 text-center overflow-hidden overflow-ellipsis whitespace-nowrap font-semibold">
+  <h2 className="bg-violet-200 hover:bg-violet-300 h-7 rounded-md mt-3 mb-1 px-3 text-center overflow-hidden overflow-ellipsis whitespace-nowrap font-semibold">
     {name}
   </h2>
 </div>
 
-    <p className="title text-center overflow-hidden overflow-ellipsis whitespace-nowrap">
+    <p className="title text-center flex justify-center items-center rounded-bl-lg rounded-br-lg overflow-hidden overflow-ellipsis whitespace-nowrap bg-violet-200 hover:bg-violet-300 h-9 font-medium">
       {jobTitle}
     </p>
   </div>

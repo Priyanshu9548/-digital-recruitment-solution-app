@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLocation, Link as Link1 } from "react-router-dom";
-import { Link } from "react-scroll";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Store/auth";
 import { useNavigate } from "react-router-dom";
@@ -56,8 +55,8 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <ul className="flex space-x-8">
               <li>
-                <Link
-                  to="home"
+                <Link1
+                  to="/"
                   activeClass="text-active"
                   className={`px-2 lg:px-0  h-6 w-fit  animate-text flex items-center justify-center text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500 cursor-pointer ${
                     scroll ? "text-active" : "text-inactive"
@@ -66,7 +65,7 @@ const Navbar = () => {
                   spy
                 >
                   HOME
-                </Link>
+                </Link1>
               </li>
               
               <li>
@@ -132,8 +131,8 @@ const Navbar = () => {
         <div className={`md:hidden ${mobileMenuClasses}`}>
           <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <li>
-              <Link
-                to="home"
+              <Link1
+                to="/"
                 activeClass="text-active"
                 className={`text-gray-800 hover:bg-gray-700 cursor-pointer hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === "/home"
@@ -145,26 +144,11 @@ const Navbar = () => {
                 spy
               >
                 Home
-              </Link>
+              </Link1>
             </li>
+           
             <li>
-              <Link
-                to="about"
-                activeClass="text-active"
-                className={`text-gray-800 hover:bg-gray-700 cursor-pointer hover:text-white block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === "/about"
-                    ? "text-active"
-                    : "text-inactive"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-                smooth
-                spy
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
+              <Link1
                 to="jobs"
                 className={`text-gray-800 hover:bg-gray-700  hover:text-white font-medium block px-3 py-2 cursor-pointer rounded-md text-base font-medium" ${
                   location.pathname === "/jobs"
@@ -175,7 +159,7 @@ const Navbar = () => {
               
               >
                 Job Openings
-              </Link>
+              </Link1>
               
             </li>
             <li>

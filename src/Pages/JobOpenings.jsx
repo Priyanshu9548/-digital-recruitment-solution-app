@@ -5,7 +5,7 @@ import persons from "../Assets/person.json";
 import Pagination from "../Components/Pagination";
 import Card from "../Components/Card";
 import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar/Navbar";
+import Navbar2 from "../Components/Navbar/Navbar2";
 
 const JobOpenings = () => {
   const people = persons;
@@ -34,7 +34,7 @@ const JobOpenings = () => {
     <>
 
 <div className="navbar-wrapper fixed z-50 w-full">
-        <Navbar />
+        <Navbar2 />
       </div>
     <div className="flex flex-col min-h-screen  ">
       <div className="flex-grow bg-gray-100 w-screen pl-32 ">
